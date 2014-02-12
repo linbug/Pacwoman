@@ -1,0 +1,60 @@
+class Pac {
+  int velocity,
+  pacSpacing;
+  float circleWidth = 40, 
+  circleX, 
+  circleY,
+  bottomLip=PI/6, 
+  topLip = 11*PI/6;
+
+  Pac (float x, float y, int z, int spacing) {
+    circleX = x; 
+    circleY = y;
+    velocity = z;
+    pacSpacing = spacing;
+  }
+
+  void display() {
+    fill(255);
+    arc (circleX, circleY, circleWidth, circleWidth, bottomLip+0.55*sin(counter), topLip-0.55*sin(counter));
+  }
+
+  void move() {
+    if (keyPressed && (key == CODED)) {
+      if (keyCode == LEFT) {
+        bottomLip = 7*PI/6; 
+        topLip = 17*PI/6;
+        circleX-=velocity;
+      } 
+      else if (keyCode == RIGHT) {
+        topLip = 11*PI/6; 
+        bottomLip = PI/6; 
+        circleX+=velocity;
+      }
+    }
+    if (keyPressed && (key ==CODED)) {
+      if (keyCode == UP) {
+        bottomLip = 10*PI/6; 
+        topLip = 20*PI/6; 
+        circleY-=velocity;
+      } 
+      else if (keyCode == DOWN) {
+        bottomLip = 2*PI/3; 
+        topLip = 14*PI/6;
+        circleY+=velocity;
+      }
+    }
+    if (circleX > mapSize) {
+      circleX = 0;
+    }
+    if (circleY > mapSize) {
+      circleY = 0;
+    }
+    if (circleX <0) {
+      circleX = mapSize;
+    }
+    if (circleY < 0) {
+      circleY = mapSize;
+    }
+  }
+}
