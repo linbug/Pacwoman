@@ -12,3 +12,5 @@ class Food {
     ellipse (x, y, foodDiameter, foodDiameter);
   }
 }
+
+//testing
