@@ -1,9 +1,9 @@
 class Pac {
-  int velocity,
+  int velocity, 
   pacSpacing;
   float circleWidth = 40, 
   circleX, 
-  circleY,
+  circleY, 
   bottomLip=PI/6, 
   topLip = 11*PI/6;
 
@@ -44,17 +44,19 @@ class Pac {
         circleY+=velocity;
       }
     }
-    if (circleX > mapSize) {
-      circleX = 0;
+  }
+  void isonMap() {
+    if (circleX > mapSize+borderSize) {
+      circleX = borderSize;
     }
-    if (circleY > mapSize) {
-      circleY = 0;
+    if (circleY > mapSize+borderSize) {
+      circleY = borderSize;
     }
-    if (circleX <0) {
-      circleX = mapSize;
+    if (circleX < borderSize) {
+      circleX = width - borderSize;
     }
-    if (circleY < 0) {
-      circleY = mapSize;
+    if (circleY < borderSize) {
+      circleY = height - borderSize;
     }
   }
 }
