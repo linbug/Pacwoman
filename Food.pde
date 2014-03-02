@@ -1,6 +1,6 @@
 class Food {
   float x, y;
-  float foodDiameter = 10;
+  float foodDiameter = 4;
 
   Food(float xpos, float ypos) {
     x = xpos;
@@ -13,4 +13,3 @@ class Food {
   }
 }
 
-//testing

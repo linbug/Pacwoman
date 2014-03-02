@@ -1,5 +1,5 @@
 int mapSize = 500, 
-speed = 5, 
+speed = 2, 
 score = 0, 
 numFood, 
 gridSize = 10, 
@@ -10,7 +10,7 @@ ArrayList foods;
 
 void setup() {
   size(mapSize+2*borderSize, mapSize+2*borderSize);
-  woman = new Pac (mapSize/2, mapSize/2, speed, gridSize/2);
+  woman = new Pac (mapSize/2, mapSize/2, gridSize, speed);
   makeFoods();
 }
 
@@ -67,3 +67,4 @@ void checkIsFoodEaten() {
     }
   }
 }
+

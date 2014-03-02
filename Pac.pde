@@ -1,17 +1,15 @@
 class Pac {
-  int velocity, 
-  pacSpacing;
-  float circleWidth = 40, 
+  int gridSpacing; 
+  float circleWidth = 20, 
   circleX, 
   circleY, 
   bottomLip=PI/6, 
   topLip = 11*PI/6;
 
-  Pac (float x, float y, int z, int spacing) {
+  Pac (float x, float y, int z, int speed) {
     circleX = x; 
     circleY = y;
-    velocity = z;
-    pacSpacing = spacing;
+    gridSpacing = z;
   }
 
   void display() {
@@ -24,24 +22,24 @@ class Pac {
       if (keyCode == LEFT) {
         bottomLip = 7*PI/6; 
         topLip = 17*PI/6;
-        circleX-=velocity;
+        circleX-=gridSpacing;
       } 
       else if (keyCode == RIGHT) {
         topLip = 11*PI/6; 
         bottomLip = PI/6; 
-        circleX+=velocity;
+        circleX+=gridSpacing;
       }
     }
     if (keyPressed && (key ==CODED)) {
       if (keyCode == UP) {
         bottomLip = 10*PI/6; 
         topLip = 20*PI/6; 
-        circleY-=velocity;
+        circleY-=gridSpacing;
       } 
       else if (keyCode == DOWN) {
         bottomLip = 2*PI/3; 
         topLip = 14*PI/6;
-        circleY+=velocity;
+        circleY+=gridSpacing;
       }
     }
   }
@@ -60,3 +58,4 @@ class Pac {
     }
   }
 }
+
