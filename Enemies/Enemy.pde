@@ -9,7 +9,11 @@ class Enemy {
   } 
   
   void display(){
-    fill(0);
+    fill(255);
     rect (squareX, squareY, squareWidth, squareWidth);
+  }
+  
+  void move(){
+    
   }
 }
