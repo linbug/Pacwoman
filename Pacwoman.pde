@@ -46,6 +46,7 @@ void draw() {
 void drawScore() {
   fill(0);
   if (foods.size() == 0) {
+    fill(255);
     text("You win!", width/2, height/2);
   } 
   else {
