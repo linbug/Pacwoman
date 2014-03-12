@@ -6,13 +6,11 @@ gridSize = 10,
 borderSize = 50;
 float counter = 1;
 Pac woman;
-Maze maze;
 ArrayList foods;
 
 void setup() {
   size(mapSize+2*borderSize, mapSize+2*borderSize);
   woman = new Pac (mapSize/2, mapSize/2, gridSize, speed);
-  maze = new Maze (width/2, height/2, 30, 10);
   makeFoods();
 }
 
@@ -34,13 +32,10 @@ void draw() {
   fill(0);
   rect(borderSize-20, borderSize-20, mapSize+40, mapSize+40);
   counter += 0.15;
-  
   for (int i=0; i<foods.size(); i++) {
     Food myFood = (Food)foods.get(i);
     myFood.display();
   }
-  
-  maze.display();
   woman.display();
   woman.move();
   woman.isonMap();
